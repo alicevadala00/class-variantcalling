@@ -5,10 +5,10 @@ mkdir -p /workspaces/class-variantcalling/analysis/variants/cache
 cd /workspaces/class-variantcalling/analysis/variants
 
 ## download hg38 (UCSC) version of database
-snpEff download -v hg38 -dataDir /workspaces/class-variantcalling/analysis/variants/cache
+git clone https://github.com/lescai-teaching/snpeff-cache.git
 
 ### to execute snpeff we need to contain the memory
-snpEff -Xmx4g ann -dataDir /workspaces/class-variantcalling/analysis/variants/cache -v hg38 results.vcf.gz >results_ann.vcf
+snpEff -Xmx4g ann -dataDir /workspaces/class-variantcalling/analysis/variants/snpeff-cache -v hg38 results.vcf.gz >results_ann.vcf
 
 
 ### filter variants
